@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import axios from "axios";
+import { useEffect } from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  useEffect(() => {
+    const initFetch = async () => {
+      const options = {
+        method: "GET",
+        url: "https://angry-bird-eccomerce-backend.vercel.app/api/v1/products",
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    };
+    initFetch();
+  }, []);
+
+  return <div className='App'>Angry Bird Eccomerce</div>;
 }
 
 export default App;
