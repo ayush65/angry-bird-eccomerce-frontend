@@ -42,11 +42,12 @@ const Card = () => {
                   <div className='card__price'>
                     <div> Rs {item.discountedPrice}</div>
                     <div className='card-price-container'>
-                      <div className='card-ActualPrice'>{item.ActualPrice}</div>
+                      <div className='card-ActualPrice'>
+                        Rs{item.ActualPrice}
+                      </div>
                       <div className='line-cut'></div>
                     </div>
                   </div>
-
                   <button className='btn-card'>Add To Cart</button>
                 </div>
               </div>
