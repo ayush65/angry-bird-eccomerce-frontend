@@ -1,18 +1,27 @@
 /** @format */
 
 import React, { useState } from "react";
-import menuItems from "./MenuItems";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
+import SideBar from "../SideBar/SideBar";
+
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
-
-  const handleClick = () => {
-    setActive(!active);
-  };
-
+  const [show, setShow] = useState(false);
   return (
     <nav className='navbar'>
+      <div className='navbar-hamburger'>
+        {" "}
+        {show ? (
+          <ImCross onClick={() => setShow(false)} />
+        ) : (
+          <GiHamburgerMenu onClick={() => setShow(true)} />
+        )}
+      </div>
+
+      {show ? <SideBar /> : null}
+
       <h1 className='navbar-logo'>
         Angry Bird Store{" "}
         <img
@@ -21,21 +30,16 @@ const Navbar = () => {
           className='nav-image-logo'
         />
       </h1>
-      <div className='menu-icon' onClick={handleClick}>
-        <i className={active ? "fas fa-times" : "fas fa-bars"}></i>
+      <div className='nav-links-container'>
+        <p className='nav-links'>Home</p>
+        <p className='nav-links'>Products</p>
+        <p className='nav-links'>Wishlist</p>
+        <p className='nav-links'>Cart</p>
       </div>
-      <ul className={active ? "nav-menu active" : "nav-menu"}>
-        {menuItems.map((item, index) => {
-          return (
-            <li key={index}>
-              <a href={item.url} className={item.cName}>
-                {item.title}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-      <button className='sign-in'>SIGN UP</button>
+      <div className='nav-buttons'>
+        <button className='login-button'>Login</button>
+        <button className='signin-button'>Sign Up</button>
+      </div>
     </nav>
   );
 };

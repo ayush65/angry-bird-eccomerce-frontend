@@ -1,0 +1,23 @@
+/** @format */
+
+.sidebar {
+  position: absolute;
+  top: 11vh;
+  width: 15rem;
+  height: 100vh;
+  background-color: #232323;
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-element {
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.sidebar-element:hover {
+  background-color: #9b2226;
+}
