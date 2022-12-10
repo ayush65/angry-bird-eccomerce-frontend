@@ -89,7 +89,7 @@
     z-index: 5;
   }
   .navbar-logo {
-    font-size: 0.8rem;
+    display: none;
   }
   .nav-links-container {
     display: none;
