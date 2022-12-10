@@ -39,12 +39,12 @@ const Card = () => {
                 <div className='card__contentContainer'>
                   <h2>{item.name}</h2>
 
-                  <div className='card__size'>
-                    <h3>Units :</h3>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
+                  <div className='card__price'>
+                    <div>Price : Rs {item.discountedPrice}</div>
+                    <div className='card-price-container'>
+                      <div className='card-ActualPrice'>{item.ActualPrice}</div>
+                      <div className='line-cut'></div>
+                    </div>
                   </div>
 
                   <button className='btn-card'>Add To Cart</button>

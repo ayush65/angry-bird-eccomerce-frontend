@@ -7,6 +7,20 @@
   margin: 3rem;
 }
 
+.card-price-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line-cut {
+  background-color: white;
+  width: 10%;
+  height: 0.1rem;
+  position: absolute;
+}
+
 .btn-card {
   width: 30%;
   background-color: rgba(255, 255, 255, 0);
@@ -14,6 +28,11 @@
   padding: 0.5rem;
   border: 1px solid #fff;
   border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.card__price {
+  color: white;
 }
 
 .card {
