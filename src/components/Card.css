@@ -22,17 +22,19 @@
 }
 
 .btn-card {
-  width: 30%;
+  width: 50%;
   background-color: rgba(255, 255, 255, 0);
   color: #fff;
   padding: 0.5rem;
   border: 1px solid #fff;
   border-radius: 10px;
   margin-top: 1.5rem;
+  font-size: 1rem;
 }
 
 .card__price {
   color: white;
+  font-size: 1.5rem;
 }
 
 .card {
@@ -188,4 +190,16 @@
   transform: translateY(0px);
   opacity: 1;
   text-decoration: none;
+}
+
+@media all and (max-width: 900px) {
+  .card-flex {
+    grid-template-columns: auto;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  .card {
+    width: 300px;
+  }
 }

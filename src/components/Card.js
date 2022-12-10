@@ -40,7 +40,7 @@ const Card = () => {
                   <h2>{item.name}</h2>
 
                   <div className='card__price'>
-                    <div>Price : Rs {item.discountedPrice}</div>
+                    <div> Rs {item.discountedPrice}</div>
                     <div className='card-price-container'>
                       <div className='card-ActualPrice'>{item.ActualPrice}</div>
                       <div className='line-cut'></div>
