@@ -1,0 +1,46 @@
+/** @format */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  width: 20rem;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+  border: 1px solid white;
+  position: relative;
+  left: 20rem;
+}
+
+.active {
+  background-color: #9b2226;
+  color: white;
+  padding: 0.2rem;
+}
+
+.page-link {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-style: none;
+  padding: 1rem;
+}
+
+@media all and (max-width: 1450px) {
+  .pagination {
+    left: 15rem;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .pagination {
+    left: 0rem;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .pagination {
+    left: 0rem;
+  }
+}

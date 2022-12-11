@@ -10,11 +10,11 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      <img
+      {/* <img
         src='https://www.photofunky.net/output/image/f/3/0/5/f3056d/photofunky.gif'
         alt=''
         className='app-img'
-      />
+      /> */}
       <SearchBar />
       <Card />
       <FilterSIdebar />

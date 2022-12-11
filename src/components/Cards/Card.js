@@ -2,15 +2,19 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Pagination from "../Pagination/Pagination";
 import "./Card.css";
 
 const Card = () => {
   const [array, setArray] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(3);
+
   useEffect(() => {
     const initFetch = async () => {
       const options = {
         method: "GET",
-        url: "https://angry-bird-eccomerce-backend.vercel.app/api/v1/products",
+        url: "http://localhost:4000/api/v1/products",
       };
 
       axios
@@ -26,9 +30,18 @@ const Card = () => {
     initFetch();
   }, []);
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = array.slice(indexOfFirstPost, indexOfLastPost);
+
+  console.log(currentPosts);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className='card-flex'>
-      {array.map((item, i) => {
+      {currentPosts.map((item, i) => {
         return (
           <div>
             <div>
@@ -55,6 +68,12 @@ const Card = () => {
           </div>
         );
       })}
+      <Pagination
+        currentPage={currentPage}
+        postsPerPage={postsPerPage}
+        totalPosts={array.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
