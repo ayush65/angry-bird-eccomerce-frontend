@@ -4,7 +4,7 @@
   position: absolute;
   top: 11vh;
   width: 15rem;
-  height: 100vh;
+  height: 85vh;
   background-color: #232323;
   z-index: 600;
   display: flex;
@@ -20,4 +20,11 @@
 
 .sidebar-element:hover {
   background-color: #9b2226;
+}
+
+@media all and (max-width: 1250px) {
+  .sidebar {
+    position: absolute;
+    top: 12.2vh;
+  }
 }

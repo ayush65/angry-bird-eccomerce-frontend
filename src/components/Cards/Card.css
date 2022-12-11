@@ -204,12 +204,20 @@
   opacity: 1;
   text-decoration: none;
 }
+@media all and (max-width: 1450px) {
+  .card-flex {
+    margin-top: 42rem;
+  }
+}
 
 @media all and (max-width: 900px) {
   .card-flex {
     grid-template-columns: auto auto;
     gap: 1rem;
     margin: 1rem;
+  }
+  .card-flex {
+    margin-top: 42rem;
   }
 }
 
@@ -218,5 +226,8 @@
     grid-template-columns: auto;
     gap: 1rem;
     margin: 1rem;
+  }
+  .card-flex {
+    margin-top: 42rem;
   }
 }

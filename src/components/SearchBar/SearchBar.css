@@ -1,0 +1,23 @@
+/** @format */
+
+.SearchBar {
+  margin-top: 7rem;
+}
+
+.sidebar_input {
+  width: 20rem;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.searchbar-button {
+  background-color: #9b2226;
+  border: none;
+  color: white;
+  padding: 14px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
