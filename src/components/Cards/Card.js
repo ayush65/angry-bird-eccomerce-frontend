@@ -40,20 +40,21 @@ const Card = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // if (loading) {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }
+  if (loading) {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }
 
-  // if (loading) {
-  //   return <SkeletonLoading />;
-  // }
+  if (loading) {
+    return <SkeletonLoading />;
+  }
 
   return (
     <div className='card-flex'>
+      {loading ? <SkeletonLoading /> : null}
       {currentPosts.map((item, i) => {
         return (
           <div>
