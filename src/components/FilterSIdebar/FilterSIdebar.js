@@ -43,29 +43,17 @@ const FilterSIdebar = () => {
             <div className='filter-div2-content '>
               <div>
                 <input type='checkbox' className='filter-div2-content1 ' /> 0 -
-                500
+                1000
               </div>
               <div>
-                <input type='checkbox' style={{ marginLeft: "-0.3rem" }} /> 500
-                - 1000
+                <input type='checkbox' style={{ marginLeft: "-0.3rem" }} /> 1000
+                - 2000
               </div>
               <div>
-                <input type='checkbox' /> 1000 - 1500
+                <input type='checkbox' /> 2000 - 3000
               </div>
               <div>
-                <input type='checkbox' /> 1500 - 2000
-              </div>
-              <div>
-                <input type='checkbox' /> 2000 - 2500
-              </div>
-              <div>
-                <input type='checkbox' /> 2500 - 3000
-              </div>
-              <div>
-                <input type='checkbox' /> 3000 - 3500
-              </div>
-              <div>
-                <input type='checkbox' /> 3500 - 4000
+                <input type='checkbox' /> 3000 - 4000
               </div>
             </div>
           </div>
@@ -81,6 +69,22 @@ const FilterSIdebar = () => {
               <input type='checkbox' className='filter-div2-content1 ' /> Bad
               Pigges
             </div>
+            <div>
+              <input
+                type='checkbox'
+                className='filter-div2-content1 '
+                style={{ marginLeft: "-3.8rem" }}
+              />{" "}
+              Games
+            </div>
+          </div>
+          <div>
+            <input
+              type='checkbox'
+              className='filter-div2-content1 '
+              style={{ marginLeft: "-4.5rem" }}
+            />{" "}
+            Tshirt
           </div>
         </div>
       ) : null}

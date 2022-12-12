@@ -11,6 +11,7 @@
   border: 1px solid white;
   position: relative;
   left: 20rem;
+  top: -1rem;
 }
 
 .active {
