@@ -8,29 +8,6 @@
   flex-direction: column;
 }
 
-.app-img {
-  width: 12%;
-  position: absolute;
-  top: 8rem;
-}
-@media all and (max-width: 1450px) {
-  .app-img {
-    width: 30%;
-    position: absolute;
-    top: 24rem;
-    margin-left: 10rem;
-  }
-}
-
-@media all and (max-width: 650px) {
-  .app-img {
-    width: 30%;
-    position: absolute;
-    top: 24rem;
-    left: 30%;
-  }
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -11,5 +11,21 @@
 .SkeletonLoading-content {
   width: 50%;
   color: white;
-  margin-top: 10rem;
+  margin-top: 5rem;
+  font-size: 2rem;
+}
+
+.app-img {
+  width: 32%;
+}
+@media all and (max-width: 1450px) {
+  .app-img {
+    width: 30%;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .app-img {
+    width: 30%;
+  }
 }

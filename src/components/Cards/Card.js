@@ -15,7 +15,7 @@ const Card = () => {
     const initFetch = async () => {
       const options = {
         method: "GET",
-        url: "https://angry-bird-eccomerce-backend.vercel.app/api/v1/products",
+        url: "http://localhost:4000/api/v1/products",
       };
 
       axios
@@ -45,7 +45,7 @@ const Card = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
   }
 
   if (loading) {

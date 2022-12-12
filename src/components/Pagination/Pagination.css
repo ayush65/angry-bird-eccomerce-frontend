@@ -12,6 +12,7 @@
   position: relative;
   left: 20rem;
   top: -1rem;
+  cursor: pointer;
 }
 
 .active {
