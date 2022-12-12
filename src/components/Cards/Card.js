@@ -15,7 +15,7 @@ const Card = () => {
     const initFetch = async () => {
       const options = {
         method: "GET",
-        url: "http://localhost:4000/api/v1/products",
+        url: "https://angry-bird-eccomerce-backend.vercel.app/api/v1/products",
       };
 
       axios
