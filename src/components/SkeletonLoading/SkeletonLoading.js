@@ -1,12 +1,10 @@
 /** @format */
 
-import React, { useState } from "react";
+import React from "react";
 import "./SkeletonLoading.css";
 import { Dots } from "loading-animations-react";
 
 const SkeletonLoading = () => {
-  const [loader, setLoader] = useState(true);
-
   return (
     <div className='SkeletonLoading'>
       {" "}
