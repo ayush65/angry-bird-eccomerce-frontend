@@ -1,41 +1,20 @@
 /** @format */
 
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useFilter } from "../../Context/FilterContext";
 import Pagination from "../Pagination/Pagination";
 import SkeletonLoading from "../SkeletonLoading/SkeletonLoading";
 import "./Card.css";
 
 const Card = () => {
-  const [array, setArray] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const [postsPerPage] = useState(6);
 
-  useEffect(() => {
-    const initFetch = async () => {
-      const options = {
-        method: "GET",
-        url: "https://angry-bird-eccomerce-backend.vercel.app/api/v1/products",
-      };
-
-      axios
-        .request(options)
-        .then(function (response) {
-          console.log(response.data);
-          setArray(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    };
-    initFetch();
-  }, []);
+  const { state } = useFilter();
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = array.slice(indexOfFirstPost, indexOfLastPost);
-
-  console.log(currentPosts);
+  const currentPosts = state.product.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -57,7 +36,7 @@ const Card = () => {
       {loading ? <SkeletonLoading /> : null}
       {currentPosts.map((item, i) => {
         return (
-          <div>
+          <div className='' key={i}>
             <div>
               <div className='card'>
                 <div className='card__imageContainer'>
@@ -76,18 +55,21 @@ const Card = () => {
                     </div>
                   </div>
                   <button className='btn-card'>Add To Cart</button>
+                  <button className='btn-card'>Add To Wishlist</button>
                 </div>
               </div>
             </div>
           </div>
         );
       })}
-      <Pagination
-        currentPage={currentPage}
-        postsPerPage={postsPerPage}
-        totalPosts={array.length}
-        paginate={paginate}
-      />
+      {state.product.length > 7 ? (
+        <Pagination
+          currentPage={currentPage}
+          postsPerPage={postsPerPage}
+          totalPosts={state.product.length}
+          paginate={paginate}
+        />
+      ) : null}
     </div>
   );
 };

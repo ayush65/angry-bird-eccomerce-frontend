@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
+import { Link } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 
 import "./Navbar.css";
@@ -31,10 +32,15 @@ const Navbar = () => {
         />
       </h1>
       <div className='nav-links-container'>
-        <p className='nav-links'>Home</p>
-        <p className='nav-links'>Products</p>
-        <p className='nav-links'>Wishlist</p>
-        <p className='nav-links'>Cart</p>
+        <Link to='/' className='nav-links'>
+          Products
+        </Link>
+        <Link to='/' className='nav-links'>
+          Wishlist <div className='div-badge-wishlist'>5</div>
+        </Link>
+        <Link to='/cart' className='nav-links'>
+          Cart <div className='div-badge-cart'>5</div>
+        </Link>
       </div>
       <div className='nav-buttons'>
         <button className='login-button'>Login</button>

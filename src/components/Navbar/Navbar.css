@@ -7,7 +7,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  
 }
 
 .navbar-logo {
@@ -47,6 +46,31 @@
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.div-badge-wishlist {
+  position: absolute;
+  left: 5rem;
+  top: -0.5rem;
+  background-color: white;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #9b2226;
+  z-index: 500;
+}
+
+.div-badge-cart {
+  position: absolute;
+  z-index: 500;
+  left: 3.3rem;
+  background-color: white;
+  top: -0.5rem;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #9b2226;
 }
 
 .nav-links:hover {
@@ -57,6 +81,7 @@
 
 .nav-links-container {
   display: flex;
+  gap: 0.5rem;
 }
 
 .signin-button,
