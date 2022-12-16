@@ -12,8 +12,8 @@ const filterReducer = (filterState, action) => {
       break;
 
     case "FETCH_SEARCH_NAME":
-      console.log(action.payload);
-      console.log(filterStateCopy.product[1]);
+      // console.log(action.payload);
+      // console.log(filterStateCopy.product[1]);
       filterStateCopy = {
         ...filterStateCopy,
 
@@ -75,40 +75,6 @@ const filterReducer = (filterState, action) => {
         rating: 5,
         sort: null,
         default: filterStateCopy.default,
-      };
-      break;
-
-    case "ADD_TO_CART":
-      filterStateCopy = {
-        ...filterStateCopy,
-        product: [
-          ...filterStateCopy.product.map((item) =>
-            item._id === action.payload.itemId
-              ? { ...item, isAddedToCart: true }
-              : item
-          ),
-        ],
-      };
-      filterStateCopy = {
-        ...filterStateCopy,
-        default: [...filterStateCopy.product],
-      };
-      break;
-
-    case "REMOVE_FROM_CART":
-      filterStateCopy = {
-        ...filterStateCopy,
-        product: [
-          ...filterStateCopy.product.map((item) =>
-            item._id === action.payload.itemId
-              ? { ...item, isAddedToCart: false }
-              : item
-          ),
-        ],
-      };
-      filterStateCopy = {
-        ...filterStateCopy,
-        default: [...filterStateCopy.product],
       };
       break;
 

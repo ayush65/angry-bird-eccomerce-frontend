@@ -10,6 +10,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+
   return (
     <nav className='navbar'>
       <div className='navbar-hamburger'>
@@ -35,11 +36,13 @@ const Navbar = () => {
         <Link to='/' className='nav-links'>
           Products
         </Link>
-        <Link to='/' className='nav-links'>
-          Wishlist <div className='div-badge-wishlist'>5</div>
+        <Link to='/wishlist' className='nav-links'>
+          Wishlist
+          {/* Wishlist <div className='div-badge-wishlist'>5</div> */}
         </Link>
         <Link to='/cart' className='nav-links'>
-          Cart <div className='div-badge-cart'>5</div>
+          Cart
+          {/* Cart <div className='div-badge-cart'></div> */}
         </Link>
       </div>
       <div className='nav-buttons'>

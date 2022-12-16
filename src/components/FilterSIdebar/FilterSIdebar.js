@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./FilterSidebar.css";
 import { RiFilterFill } from "react-icons/ri";
 import { ImCross } from "react-icons/im";
@@ -33,31 +33,13 @@ const FilterSIdebar = () => {
               Clear all filter
             </button>
           </div>
-          {/* <div className='filter-div1'>
-            <p>Range Filter</p>
 
-            <input
-              type='range'
-              min='500'
-              max='4000'
-              value={price}
-              className='range-filter'
-              onChange={(e) => {
-                setValue(e.target.value);
-                dispatch({
-                  type: "RANGE_FILTER",
-                  payload: { maxPrice: e.target.value },
-                });
-              }}
-            />
-            // </div> */}
-          {/* <div>{value}</div> */}
           <div>
             <div className='filter-div2 '>Sort By Price</div>
             <div className='filter-div2-content '>
               <div>
                 <input
-                  type='radio'
+                  type='checkbox'
                   className='filter-div2-content1 '
                   onClick={() => {
                     dispatch({
@@ -71,7 +53,7 @@ const FilterSIdebar = () => {
               </div>
               <div>
                 <input
-                  type='radio'
+                  type='checkbox'
                   className='filter-div2-content1 '
                   onClick={() => {
                     dispatch({
@@ -85,35 +67,6 @@ const FilterSIdebar = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className='filter-div2 '>Sort By Category</div>
-          <div className='filter-div2-content '>
-            <div>
-              <input type='checkbox' className='filter-div2-content1 ' /> Angry
-              Birds
-            </div>
-
-            <div>
-              <input type='checkbox' className='filter-div2-content1 ' /> Bad
-              Pigges
-            </div>
-            <div>
-              <input
-                type='checkbox'
-                className='filter-div2-content1 '
-                style={{ marginLeft: "-3.8rem" }}
-              />{" "}
-              Games
-            </div>
-          </div>
-          <div>
-            <input
-              type='checkbox'
-              className='filter-div2-content1 '
-              style={{ marginLeft: "-4.5rem" }}
-            />{" "}
-            Tshirt
-          </div> */}
         </div>
       ) : null}
     </div>

@@ -1,0 +1,36 @@
+/** @format */
+
+.wishlist {
+  width: 98vw;
+  height: 100vh;
+  background-color: #212121;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0rem;
+  justify-content: center;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.wishlist-products-card {
+  width: 400px;
+  border: 1px solid #fff;
+  height: 310px;
+  margin: 1rem;
+  background-color: #9b2226;
+  border-radius: 25px;
+}
+
+@media all and (max-width: 1450px) {
+  .wishlist {
+    width: 98vw;
+    height: 600vh;
+    background-color: #212121;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0rem;
+    justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+  }
+}
