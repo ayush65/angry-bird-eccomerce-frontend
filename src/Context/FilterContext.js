@@ -16,7 +16,9 @@ const FilterProvider = ({ children }) => {
   });
   useEffect(() => {
     (async () => {
-      let response = await axios.get("http://localhost:4000/api/v1/products");
+      let response = await axios.get(
+        "https://angry-bird-eccomerce-backend-6e2m.vercel.app/api/v1/products"
+      );
       //   console.log(response.data);
       dispatch({
         type: "UPDATE_PRODUCTS",
