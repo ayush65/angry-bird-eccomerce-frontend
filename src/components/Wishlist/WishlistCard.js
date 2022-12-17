@@ -42,38 +42,41 @@ const WishlistCard = () => {
         {updatedArray.map((item) => {
           return (
             <div key={item.id} className='wishlist-products-card'>
-              <img src={item.img} alt='item-img' className='item-cart-img' />
+              <img
+                src={item.img}
+                alt='item-img'
+                className='item-wishlist-img'
+              />
               <h1>{item.name}</h1>
               <p>Price :- Rs {item.discountedPrice}</p>
-              <div>
-                <button
-                  className='btn-card'
-                  onClick={() => {
-                    setArray(item);
-                    setTimeout(() => {
-                      setCartArray([
-                        ...Cartarray,
-                        {
-                          id: item.id,
-                          name: item.name,
-                          img: item.img,
-                          discountedPrice: item.discountedPrice,
-                        },
-                      ]);
-                    }, 100);
-                    notify();
-                  }}>
-                  Move to Cart
-                </button>
-                <button
-                  className='btn-card'
-                  onClick={() => {
-                    setArray(item);
-                    notify1();
-                  }}>
-                  Remove from Wishlist
-                </button>
-              </div>
+
+              <button
+                className='btn-card btn-wislist'
+                onClick={() => {
+                  setArray(item);
+                  setTimeout(() => {
+                    setCartArray([
+                      ...Cartarray,
+                      {
+                        id: item.id,
+                        name: item.name,
+                        img: item.img,
+                        discountedPrice: item.discountedPrice,
+                      },
+                    ]);
+                  }, 100);
+                  notify();
+                }}>
+                Move to Cart
+              </button>
+              <button
+                className='btn-card btn-wislist'
+                onClick={() => {
+                  setArray(item);
+                  notify1();
+                }}>
+                Remove from Wishlist
+              </button>
             </div>
           );
         })}

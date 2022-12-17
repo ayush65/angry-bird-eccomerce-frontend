@@ -84,6 +84,10 @@
   gap: 0.5rem;
 }
 
+.login-button {
+  text-decoration: none;
+}
+
 .signin-button,
 .login-button {
   width: 10rem;

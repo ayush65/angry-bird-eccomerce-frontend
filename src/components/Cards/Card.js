@@ -21,6 +21,8 @@ const Card = () => {
     JSON.parse(localStorage.getItem("wishlistObj") || "[]")
   );
 
+  const [isCartButtonClicked, setIsCartButtonClicked] = useState(true);
+
   // console.log(array);
 
   const { state } = useFilter();
@@ -82,24 +84,30 @@ const Card = () => {
                       <div className='line-cut'></div>
                     </div>
                   </div>
-                  <button
-                    className='btn-card'
-                    onClick={() => {
-                      setTimeout(() => {
-                        setArray([
-                          ...array,
-                          {
-                            id: uuidv4(),
-                            name: item.name,
-                            img: item.imgUrl,
-                            discountedPrice: item.discountedPrice,
-                          },
-                        ]);
-                      }, 1000);
-                      notify();
-                    }}>
-                    Add To Cart
-                  </button>
+
+                  {isCartButtonClicked ? (
+                    <button
+                      className='btn-card'
+                      onClick={() => {
+                        setTimeout(() => {
+                          setArray([
+                            ...array,
+                            {
+                              id: uuidv4(),
+                              name: item.name,
+                              img: item.imgUrl,
+                              discountedPrice: item.discountedPrice,
+                            },
+                          ]);
+                        }, 1000);
+                        notify();
+                      }}>
+                      Add To Cart
+                    </button>
+                  ) : (
+                    <button>Move to Cart</button>
+                  )}
+
                   <button
                     className='btn-card'
                     onClick={() => {

@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.btn-clear {
+  margin-top: 3.5rem;
+}
+
 .ui-filter {
   position: absolute;
   right: -2rem;

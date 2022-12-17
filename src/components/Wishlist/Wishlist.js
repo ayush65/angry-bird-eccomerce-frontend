@@ -6,9 +6,9 @@ import WishlistCard from "./WishlistCard";
 
 const Wishlist = () => {
   return (
-    <>
+    <div className="Wishlist">
       <WishlistCard />
-    </>
+    </div>
   );
 };
 

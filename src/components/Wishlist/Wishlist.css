@@ -2,23 +2,42 @@
 
 .wishlist {
   width: 98vw;
-  height: 100vh;
+  height: 170%;
   background-color: #212121;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   gap: 0rem;
   justify-content: center;
   color: white;
   flex-wrap: wrap;
 }
 
+.Wishlist {
+  height: 100%;
+  background-color: #212121;
+  width: 100vw;
+}
+
+.item-wishlist-img {
+  width: 100px;
+}
+
 .wishlist-products-card {
-  width: 400px;
+  width: 270px;
   border: 1px solid #fff;
-  height: 310px;
+
+  height: 400px;
   margin: 1rem;
   background-color: #9b2226;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-wislist {
+  width: 70%;
 }
 
 @media all and (max-width: 1450px) {

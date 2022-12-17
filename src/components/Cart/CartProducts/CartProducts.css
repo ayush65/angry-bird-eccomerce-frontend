@@ -30,8 +30,8 @@
     grid-template-columns: auto;
     width: 50%;
     position: absolute;
-    top: 50%;
-    left: 30%;
+    top: 70%;
+    left: 20%;
     display: flex;
     justify-content: center;
     align-items: center;

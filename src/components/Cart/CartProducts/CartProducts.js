@@ -19,9 +19,9 @@ const CartProducts = () => {
   const notify1 = () => toast.dark("Moved to Wishlist");
 
   useEffect(() => {
-    const str = JSON.parse(localStorage.getItem("cartObj"));
+    const str = JSON.parse(localStorage.getItem("cartObj") || "[]");
 
-    const updatedItems = str.filter((item) => item.id !== array.id);
+    const updatedItems = str ? str.filter((item) => item.id !== array.id) : [];
     setUpdatedArray(updatedItems);
     localStorage.setItem("cartObj", JSON.stringify(updatedItems));
     console.log(JSON.parse(localStorage.getItem("cartObj")));

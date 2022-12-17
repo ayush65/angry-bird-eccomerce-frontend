@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./FilterSidebar.css";
 import { RiFilterFill } from "react-icons/ri";
 import { ImCross } from "react-icons/im";
@@ -27,6 +27,7 @@ const FilterSIdebar = () => {
         <div className='ui-filter'>
           <div className='filter-div1'>
             <button
+              className='address-modal-btn btn-clear'
               onClick={() => {
                 dispatch({ type: "CLEAR_FILTER" });
               }}>
