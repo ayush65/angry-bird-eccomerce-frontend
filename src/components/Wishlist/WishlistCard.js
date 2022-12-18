@@ -34,7 +34,7 @@ const WishlistCard = () => {
   return (
     <>
       <ToastContainer />
-      <h1 style={{ color: "white" }}>
+      <h1 className="wishlist-container">
         Wishlist :- {updatedArray.length} Items
       </h1>
 

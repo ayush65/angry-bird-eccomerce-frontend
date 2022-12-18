@@ -23,14 +23,24 @@ const PriceDetailsCard = () => {
 
   const [razorpayPrice, setRazorPayPrice] = useState(0);
 
+  const [array, setArray] = useState([]);
+
+  const [cartArray, setCartArray] = useState(
+    JSON.parse(localStorage.getItem("cartObj") || "[]")
+  );
+
   useEffect(() => {
     // setTimeout(() => {
     //   window.location.href = "https://praveen.science/";
     // }, 10000);
 
+    const cartObj = JSON.stringify(cartArray);
+
+    localStorage.setItem("cartObj", cartObj);
+
     const str = JSON.parse(localStorage.getItem("cartObj"));
 
-    const updatedItems = str;
+    const updatedItems = str ? str.filter((item) => item.id !== array.id) : [];
     localStorage.setItem("cartObj", JSON.stringify(updatedItems));
     console.log(JSON.parse(localStorage.getItem("cartObj")));
     setUpdatedArray(updatedItems);
@@ -48,7 +58,7 @@ const PriceDetailsCard = () => {
     const totalprice = total - discountedPrice + deliveryCharge;
     setRazorPayPrice(totalprice * 100);
     setTotalPrice(totalprice);
-  }, []);
+  }, [cartArray]);
 
   console.log(razorpayPrice);
 
@@ -64,6 +74,7 @@ const PriceDetailsCard = () => {
       setRazorpayResponseId(response.razorpay_payment_id);
       if (response.razorpay_payment_id) {
         onOpenModal();
+        setCartArray([]);
       }
     },
     prefill: {

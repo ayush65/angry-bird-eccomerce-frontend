@@ -19,7 +19,7 @@ const FilterProvider = ({ children }) => {
       let response = await axios.get(
         "https://angry-bird-eccomerce-backend-6e2m.vercel.app/api/v1/products"
       );
-      //   console.log(response.data);
+      //console.log(response.data);
       dispatch({
         type: "UPDATE_PRODUCTS",
         payload: { products: response.data },

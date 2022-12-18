@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-router-dom";
@@ -10,6 +10,24 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+
+  const [login, setLogin] = useState(
+    JSON.parse(localStorage.getItem("LoginState") || false)
+  );
+
+  useEffect(() => {
+    const LoginState = JSON.stringify(login);
+
+    localStorage.setItem("LoginState", LoginState);
+
+    const str = localStorage.getItem("LoginState");
+
+    const parsedObj = JSON.parse(str);
+
+    console.log(parsedObj);
+
+    setLogin(parsedObj);
+  }, [login]);
 
   return (
     <nav className='navbar'>
@@ -46,9 +64,21 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='nav-buttons'>
-        <Link to='/login' className='login-button'>
-          Login
-        </Link>
+        {login ? (
+          <div className='nav-buttons'>
+            <Link to='/login' className='login-button'>
+              Login
+            </Link>
+
+            <Link to='/signup' className='login-button'>
+              Signup
+            </Link>
+          </div>
+        ) : (
+          <Link to='/' className='login-button' onClick={() => setLogin(true)}>
+            Logout
+          </Link>
+        )}
       </div>
     </nav>
   );

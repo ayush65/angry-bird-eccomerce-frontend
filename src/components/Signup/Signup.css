@@ -1,0 +1,17 @@
+/** @format */
+
+.signup-div-container {
+  width: 500px;
+  height: 250px;
+  font-size: 1.5rem;
+  background-color: #9b2226;
+  padding: 3rem;
+}
+
+.signup-img {
+  position: relative;
+  left: 3rem;
+  border: 3px solid #fff;
+  border-radius: 30px;
+  width: 50%;
+}
