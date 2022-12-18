@@ -12,7 +12,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
 
   const [login, setLogin] = useState(
-    JSON.parse(localStorage.getItem("LoginState") || false)
+    JSON.parse(localStorage.getItem("LoginState") || true)
   );
 
   useEffect(() => {
