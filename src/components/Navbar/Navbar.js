@@ -75,7 +75,10 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <Link to='/' className='login-button' onClick={() => setLogin(true)}>
+          <Link
+            to='/logout'
+            className='login-button'
+            onClick={() => setLogin(true)}>
             Logout
           </Link>
         )}

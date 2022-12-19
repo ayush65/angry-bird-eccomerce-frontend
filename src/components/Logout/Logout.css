@@ -1,0 +1,10 @@
+/** @format */
+
+.logout-img {
+  width: 50%;
+  border-radius: 30px;
+}
+
+.logout-container {
+  flex-direction: column;
+}
