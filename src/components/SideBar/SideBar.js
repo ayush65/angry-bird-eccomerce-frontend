@@ -16,7 +16,10 @@ const SideBar = () => {
       <Link to='/cart' className='sidebar-element'>
         Cart
       </Link>
-      <div className='sidebar-element'> Account</div>
+      <Link to='/account' className='sidebar-element'>
+        {" "}
+        Account
+      </Link>
     </div>
   );
 };

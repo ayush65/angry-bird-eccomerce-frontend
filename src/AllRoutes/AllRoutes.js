@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Account from "../components/Account/Account";
 import Cart from "../components/Cart/Cart";
 import Homepage from "../components/Homepage";
 import Login from "../components/Login/Login";
@@ -14,6 +15,7 @@ function RoutesPath() {
   return (
     <>
       <Routes>
+        <Route path='/account' element={<Account />}></Route>
         <Route path='/logout' element={<Logout />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>

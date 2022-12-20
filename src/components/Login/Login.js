@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { HiKey } from "react-icons/hi";
 import axios from "axios";
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -28,6 +28,9 @@ const Login = () => {
         if (response.data === "Success") {
           setLoginState(false);
           console.log(loginState);
+          const user = JSON.stringify(username);
+
+          localStorage.setItem("username", user);
           window.location.reload(false);
         } else {
           alert("please provide Correct username and password");

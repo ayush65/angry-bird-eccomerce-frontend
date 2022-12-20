@@ -78,7 +78,11 @@ const Navbar = () => {
           <Link
             to='/logout'
             className='login-button'
-            onClick={() => setLogin(true)}>
+            onClick={() => {
+              setLogin(true);
+              localStorage.removeItem("username");
+              localStorage.removeItem("userObj");
+            }}>
             Logout
           </Link>
         )}
