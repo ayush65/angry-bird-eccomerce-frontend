@@ -51,15 +51,10 @@ const Signup = () => {
         .then(function (response) {
           console.log(response);
 
-          if (response) {
-            setToLogin(true);
-            setPassword("");
-            setUsername("");
-            alert("Account made successfully");
-          }
-          if (!response.status) {
-            alert("Error occured");
-          }
+          setToLogin(true);
+          setPassword("");
+          setUsername("");
+          alert("Account made successfully");
         })
         .catch(function (error) {
           console.log(error);
