@@ -8,8 +8,6 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [setToLogin] = useState(false);
-
   // const [arr, setArr] = useState(["ayush65"]);
 
   const [arr] = useState(JSON.parse(localStorage.getItem("UsersData") || "[]"));
@@ -51,7 +49,6 @@ const Signup = () => {
         .then(function (response) {
           console.log(response);
 
-          setToLogin(true);
           setPassword("");
           setUsername("");
           alert("Account made successfully");
