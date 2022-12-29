@@ -2,41 +2,78 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import "./Signup.css";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [toLogin, setToLogin] = useState(false);
+  const [setToLogin] = useState(false);
+
+  // const [arr, setArr] = useState(["ayush65"]);
+
+  const [arr] = useState(JSON.parse(localStorage.getItem("UsersData") || "[]"));
 
   const LoginHandler = () => {
     if (username === "" || password === "") {
       return alert("Please enter Proper Details");
     }
-    axios
-      .post(
-        "https://angry-bird-eccomerce-backend-6e2m.vercel.app/api/v1/users",
-        {
-          name: username,
-          password: password,
-        }
-      )
-      .then(function (response) {
-        console.log(response);
 
-        if (response) {
-          setToLogin(true);
-          setPassword("");
-          setUsername("");
-          alert("Account made successfully");
-        }
+    axios
+      .get("https://angry-bird-eccomerce-backend-6e2m.vercel.app/api/v1/users")
+      .then(function (response) {
+        // const usersData = response.data;
+
+        // usersData.map((item) => {
+        //   console.log(item.name);
+
+        //   arr.push(item.name);
+        //   console.log(arr);
+        // });
+
+        arr.push(username);
       })
       .catch(function (error) {
         console.log(error);
       });
+
+    if (arr.includes(username)) {
+      alert("Account Already exist");
+    } else {
+      axios
+        .post(
+          "https://angry-bird-eccomerce-backend-6e2m.vercel.app/api/v1/users",
+          {
+            name: username,
+            password: password,
+          }
+        )
+        .then(function (response) {
+          console.log(response);
+
+          if (response.status === 201) {
+            setToLogin(true);
+            setPassword("");
+            setUsername("");
+            alert("Account made successfully");
+          }
+          if (!response.status) {
+            alert("Error occured");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   };
+
+  useEffect(() => {
+    const usersDataObj = JSON.stringify(arr);
+
+    localStorage.setItem("UsersData", usersDataObj);
+
+    arr.push("ayush65");
+  }, [arr]);
 
   return (
     <div className='login-container'>
