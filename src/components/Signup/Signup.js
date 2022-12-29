@@ -51,7 +51,7 @@ const Signup = () => {
         .then(function (response) {
           console.log(response);
 
-          if (response.status === 201) {
+          if (response) {
             setToLogin(true);
             setPassword("");
             setUsername("");
